@@ -1,0 +1,147 @@
+/*
+* Project : workLoad.js
+* File : mixins.less
+* Date : September, 04, 2015
+* Author : Pierre Prezelin <pierre.prez2.@gmail.com>
+*/
+
+.aspect-ratio(@width, @height) {
+	position: relative;
+
+	&:before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: (@height / @width) * 100%;
+	}
+	> .content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+.font-smoothing() {
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ir() {
+    display: block;
+    font: ~"0/0" a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.transition(@arguments) {
+    -webkit-transition: @arguments;
+    transition: @arguments;
+}
+
+.border-radius(@value) {
+    -webkit-border-radius: @value;
+    border-radius: @value;
+}
+
+.opacity(@opacity) {
+    opacity: @opacity;
+    @opacityPercentage: @opacity * 100;
+    filter: ~"alpha(opacity=@{opacityPercentage})";
+}
+
+.rotate(@deg) {
+    -webkit-transform: rotate(@deg);
+    transform: rotate(@deg);
+}
+
+.scale(@ratio) {
+    -webkit-transform: scale(@ratio);
+    -ms-transform: scale(@ratio);
+    transform: scale(@ratio);
+}
+
+.translate3d(@x, @y: 0, @z: 0) {
+    -webkit-transform: translate3d(@x, @y, @z);
+    -ms-transform: translate3d(@x, @y, @z);
+    transform: translate3d(@x, @y, @z);
+}
+
+.translateX(@x) {
+    -webkit-transform: translateX(@x);
+    -ms-transform: translateX(@x);
+    transform: translateX(@x);
+}
+
+.translateY(@y) {
+    -webkit-transform: translateY(@y);
+    -ms-transform: translateY(@y);
+    transform: translateY(@y);
+}
+
+.gradient-vertical(@start-color: #555, @end-color: #333, @start-percent: 0%, @end-percent: 100%) {
+    background: @end-color;
+    background: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);
+    background: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent);
+}
+
+.gradient-horizontal(@start-color: #555, @end-color: #333, @start-percent: 0%, @end-percent: 100%) {
+    background: @end-color;
+    background: -webkit-linear-gradient(left, @start-color @start-percent, @end-color @end-percent);
+    background: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent);
+}
+
+.gradient-radial(@start-color, @end-color) {
+    background: @end-color;
+    background: -webkit-radial-gradient(center, ellipse cover, @start-color 0%, @end-color 100%);
+    background: radial-gradient(ellipse at center, @start-color 0%, @end-color 100%);
+}
+
+/*.text-shadow(@xSize, @ySize, @blur, @spread, @color) {
+    -webkit-text-shadow: @xSize @ySize @blur @spread @color;
+    -moz-text-shadow: @xSize @ySize @blur @spread @color;
+    text-shadow: @xSize @ySize @blur @spread @color;
+}
+
+.text-shadow-inset(@xSize, @ySize, @blur, @spread, @color, inset) {
+    -webkit-text-shadow: @xSize @ySize @blur @spread @color inset;
+    -moz-text-shadow: @xSize @ySize @blur @spread @color inset;
+    text-shadow: @xSize @ySize @blur @spread @color inset;
+}*/
+
+/*.box-shadow(@xSize, @ySize, @blur, @spread, @color) {
+    -webkit-box-shadow: @xSize @ySize @blur @spread @color;
+    -moz-box-shadow: @xSize @ySize @blur @spread @color;
+    box-shadow: @xSize @ySize @blur @spread @color;
+}
+
+.box-shadow-inset(@xSize, @ySize, @blur, @spread, @color, inset) {
+    -webkit-box-shadow: @xSize @ySize @blur @spread @color inset;
+    -moz-box-shadow: @xSize @ySize @blur @spread @color inset;
+    box-shadow: @xSize @ySize @blur @spread @color inset;
+}*/
+
+.box-sizing(@type: border-box) {
+    -webkit-box-sizing: @type;
+    box-sizing: @type;
+}
+
+.background-size(@type: cover) {
+    -webkit-background-size: @type;
+    background-size: @type;
+}
+
+.appearance(@type: none) {
+    -webkit-appearance: @type;
+    appearance: @type;
+}
+
+.filter(@type, @value: 100%) {
+    -webkit-filter: ~"@{type}(@{value})";
+    -ms-filter: ~"@{type}(@{value})";
+    filter: ~"@{type}(@{value})";
+}
