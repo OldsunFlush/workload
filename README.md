@@ -1,2 +1,2 @@
-# workload [LEGACY]
-A jQuery plugin to create a grid displaying works in an elegant way.
+# workload
+This project is unfinished and probably never will be, as it was originally meant for the 2nd version of my portfolio.
